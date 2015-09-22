@@ -1,7 +1,7 @@
 ﻿/* Author: Tom Tsiliopoulos */
 /* File: IslandController.cs */
 /* Creation Date: Sept 21, 2015 */
-/* Description: This script controls the ocean gameObject's movement */
+/* Description: This script controls the island gameObject's movement */
 
 using UnityEngine;
 using System.Collections;
