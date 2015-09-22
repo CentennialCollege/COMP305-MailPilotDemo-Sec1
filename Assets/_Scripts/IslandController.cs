@@ -33,7 +33,7 @@ public class IslandController : MonoBehaviour {
 	
 	// Resets our gameObject
 	private void _Reset() {
-		Vector2 resetPosition = new Vector2 (0.0f, 270f);
+		Vector2 resetPosition = new Vector2 (Random.Range(-290f,290f), 270f);
 		gameObject.GetComponent<Transform> ().position = resetPosition;
 	}
 }
