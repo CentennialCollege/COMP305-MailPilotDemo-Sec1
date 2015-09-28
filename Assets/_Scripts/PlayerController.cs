@@ -41,13 +41,13 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		// boundary check
-		if ((this._newPosition.x + 33f) <= this.boundary.xMin) {
-			this._newPosition.x = this.boundary.xMin + 33f;
+		if ((this._newPosition.x) < this.boundary.xMin) {
+			this._newPosition.x = this.boundary.xMin;
 			//gameObject.GetComponent<Transform>().position = this._newPosition;
 		}
 
-		if ((this._newPosition.x - 33f) >= this.boundary.xMax) {
-			this._newPosition.x = this.boundary.xMax - 33f;
+		if ((this._newPosition.x) > this.boundary.xMax) {
+			this._newPosition.x = this.boundary.xMax;
 			//gameObject.GetComponent<Transform>().position = this._newPosition;
 		}
 		gameObject.GetComponent<Transform>().position = this._newPosition;
