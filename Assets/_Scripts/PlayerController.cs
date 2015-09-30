@@ -11,12 +11,15 @@ public class PlayerController : MonoBehaviour {
 	// PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++
 	public Vector2 move = new Vector2 (0.0f, 0.0f);
 	public Boundary boundary;
+
+	public Camera camera;
 	
 	// PRIVATE INSTANCE VARIABLES
 	private Vector2 _newPosition = new Vector2(0.0f, 0.0f);
 	
 	// Use this for initialization
 	void Start () {
+		 
 
 	}
 	
@@ -30,7 +33,8 @@ public class PlayerController : MonoBehaviour {
 	private void _CheckInput() {
 
 		this._newPosition = gameObject.GetComponent<Transform> ().position; // current position
-		
+
+		/*
 		if (Input.GetAxis ("Horizontal") > 0) {
 			this._newPosition.x += this.move.x; // add move value to current position
 			//gameObject.GetComponent<Transform>().position = this._newPosition;
@@ -39,6 +43,11 @@ public class PlayerController : MonoBehaviour {
 			this._newPosition.x -= this.move.x; // subtract move value to current position
 			//gameObject.GetComponent<Transform>().position = this._newPosition;
 		}
+		*/
+
+		// player object follows mouse position
+		Vector2 mousePosition = Input.mousePosition;
+		this._newPosition.x = this.camera.ScreenToWorldPoint (mousePosition).x;
 
 		// boundary check
 		if ((this._newPosition.x) < this.boundary.xMin) {

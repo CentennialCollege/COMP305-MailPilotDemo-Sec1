@@ -7,7 +7,6 @@ public class PlayerCollider : MonoBehaviour {
 	public Text ScoreLabel;
 	public Text LivesLabel;
 
-
 	// PRIVATE INSTANCE VARIABLES
 	private AudioSource[] _audioSources; // array of audio sources
 	private AudioSource _cloudAudioSource, _islandAudioSource;
