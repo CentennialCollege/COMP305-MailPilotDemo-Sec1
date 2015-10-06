@@ -42,8 +42,17 @@ public class PlayerCollider : MonoBehaviour {
 		if (otherGameObject.tag == "Cloud") {
 			this._cloudAudioSource.Play(); // play the thunder sound
 			this._lives -= 1;
+			// End the game when lives are less than or equal to zero
+			if(this._lives <= 0) {
+				this._endGame();
+			}
 		}
 
 		this._ScoreUpdate ();
+	}
+
+	// PRIVATE METHODS
+	private void _endGame() {
+		Application.LoadLevel ("GameOver");
 	}
 }
